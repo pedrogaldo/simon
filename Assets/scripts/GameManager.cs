@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -27,10 +29,23 @@ public class GameManager : MonoBehaviour
     public AudioSource correct;
     public AudioSource[] sonidoSecuencia;
 
+    public GameObject canvas_GameOver;
+    public GameObject btn_empezar;
+    public GameObject tambores_pantalla;
+
+    public Text score;
+
     // Start is called before the first frame update
     void Start()
     {
+        canvas_GameOver.SetActive(false);
+        tambores_pantalla.SetActive(true);
 
+        score.text = "Puntaje: 0, Mejor: " + PlayerPrefs.GetInt("HiScore");
+        if (!PlayerPrefs.HasKey("HiScore"))
+        {
+            PlayerPrefs.SetInt("HiScore", 0);
+        }
     }
 
     // Update is called once per frame
@@ -102,6 +117,7 @@ public class GameManager : MonoBehaviour
         staylitCounter = stayLit;
         shouldBeLit = true;
 
+        score.text = "Puntaje: 0 \n Mejor: " + PlayerPrefs.GetInt("HiScore");
 
     }
 
@@ -117,6 +133,12 @@ public class GameManager : MonoBehaviour
 
                 if(inputInSequence>= activeSequence.Count)
                 {
+                    if (activeSequence.Count > PlayerPrefs.GetInt("HiScore"))
+                    {
+                        PlayerPrefs.SetInt("Hiscore", activeSequence.Count);
+                    }
+                    score.text = "Puntaje: " + activeSequence.Count + " - Mejor: " + PlayerPrefs.GetInt("HiScore");
+
                     positionInSequence = 0;
                     inputInSequence = 0;
 
@@ -134,18 +156,33 @@ public class GameManager : MonoBehaviour
                     gameActive = false;
 
                     correct.Play();
+
                 }
+                canvas_GameOver.SetActive(false);
+                btn_empezar.SetActive(false);
+
             }
 
             else
             {
                 Debug.Log("incorrecto");
                 gameActive = false;
+                canvas_GameOver.SetActive(true);
+                tambores_pantalla.SetActive(false);
             }
         }
 
     }
 
+    public void vuelveJuego()
+    {
+        tambores_pantalla.SetActive(true);
+        canvas_GameOver.SetActive(false);
+    }
 
-    
+
+
+
+
+
 }

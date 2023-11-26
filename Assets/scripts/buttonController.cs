@@ -35,6 +35,6 @@ public class buttonController : MonoBehaviour
     {
         theSprite.color = new Color(theSprite.color.r, theSprite.color.g, theSprite.color.b, 0.5f);
         theGM.tamborPresionado(numTambor);
-
+        elSonido.Stop();
     }
 }
