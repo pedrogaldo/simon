@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212692802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0229, y: 0.0007, z: 0}
-  m_LocalScale: {x: 1.0125414, y: 0.91403604, z: 1}
+  m_LocalPosition: {x: 0.4601, y: -0.0136, z: 0}
+  m_LocalScale: {x: 0.9885852, y: 1.0463415, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -647,7 +647,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.919122
+  orthographic size: 5.607605
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -715,8 +715,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.866516, y: -162.54825}
-  m_SizeDelta: {x: 174.2669, y: 41.0965}
+  m_AnchoredPosition: {x: -66.59508, y: -174.95512}
+  m_SizeDelta: {x: 133.1906, y: 60.0975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925785555
 MonoBehaviour:
@@ -872,11 +872,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 58
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
